@@ -1,6 +1,37 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
+
+:root {
+    --mdc-theme-primary: #3f51b5;
+    --mdc-theme-secondary: #018786;
+    --mdc-theme-background: #fff;
+    --mdc-theme-surface: #fff;
+    --mdc-theme-error: #b00020;
+    --mdc-theme-on-primary: #fff;
+    --mdc-theme-on-secondary: #fff;
+    --mdc-theme-on-surface: #000;
+    --mdc-theme-on-error: #fff;
+    --mdc-theme-text-primary-on-background: rgba(0, 0, 0, 0.87);
+    --mdc-theme-text-secondary-on-background: rgba(0, 0, 0, 0.54);
+    --mdc-theme-text-hint-on-background: rgba(0, 0, 0, 0.38);
+    --mdc-theme-text-disabled-on-background: rgba(0, 0, 0, 0.38);
+    --mdc-theme-text-icon-on-background: rgba(0, 0, 0, 0.38);
+    --mdc-theme-text-primary-on-light: rgba(0, 0, 0, 0.87);
+    --mdc-theme-text-secondary-on-light: rgba(0, 0, 0, 0.54);
+    --mdc-theme-text-hint-on-light: rgba(0, 0, 0, 0.38);
+    --mdc-theme-text-disabled-on-light: rgba(0, 0, 0, 0.38);
+    --mdc-theme-text-icon-on-light: rgba(0, 0, 0, 0.38);
+    --mdc-theme-text-primary-on-dark: white;
+    --mdc-theme-text-secondary-on-dark: rgba(255, 255, 255, 0.7);
+    --mdc-theme-text-hint-on-dark: rgba(255, 255, 255, 0.5);
+    --mdc-theme-text-disabled-on-dark: rgba(255, 255, 255, 0.5);
+    --mdc-theme-text-icon-on-dark: rgba(255, 255, 255, 0.5);
+
+    --mdc-typography-body1-line-height: 1.75rem;
+}
+
+
 body {
     background: #d2d6de;
     font-family: 'Roboto', sans-serif;
@@ -32,12 +63,6 @@ body {
     color: rgb(68, 68, 68);
 }
 
-#kc-content {
-    background: white;
-    padding: 20px;
-    box-shadow: 0 5px 6px -3px rgba(0, 0, 0, 0.2),
-        0 9px 12px 1px rgba(0, 0, 0, 0.14), 0 3px 16px 2px rgba(0, 0, 0, 0.12);
-}
 
 #kc-reset-password-form #kc-form-options {
     float: left;
@@ -75,7 +100,7 @@ hr {
 
 @media (min-width: 769px) {
     #kc-content {
-        width: 360px;
+        width: 450px;
     }
 }
 
@@ -135,28 +160,64 @@ hr {
     margin-top: 20px;
 }
 
-.template .language-picker {
-    position: relative;
-    margin: 0 auto;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    width: 195px;
-}
 
-.template .language-picker .language-icon {
-    float: left;
-    color: rgba(0, 0, 0, 0.54);
-}
+/* EPO */
 
-.template .language-picker .mdc-select {
-    float: right;
-    margin-top: -25px;
-}
-
-.template .language-picker .mdc-select option {
-    font-weight: normal;
+.mdc-dialog {
     display: block;
-    white-space: pre;
-    min-height: 1.2em;
-    padding: 0px 2px 1px;
+    position: relative;
+    visibility: visible;
+}
+
+.mdc-dialog .mdc-dialog__container {
+    display: block;
+    opacity: 1;
+}
+
+.mdc-dialog__surface {
+    opacity: 1;
+}
+
+.mdc-dialog__surface,
+.mdc-text-field__input {
+    /*font-size: 15px;*/
+}
+
+.mdc-text-field__input {
+    box-sizing: border-box;
+    line-height: 1.75rem;
+}
+
+.mdc-text-field label {
+    line-height: 1.75rem;
+}
+
+.mdc-select:not(.mdc-select--disabled) .mdc-select__anchor {
+    background-color: transparent;
+}
+
+.mdc-select {
+    display: inline-block;
+}
+
+.mdc-button {
+    min-width: 120px;
+}
+
+.row {
+    width: 100%;
+    text-align: center;
+}
+
+
+.menu-outline {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 45px;
+    border: 0;
+    background-color: white;
+    opacity: 0.4;
 }

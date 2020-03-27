@@ -1,27 +1,27 @@
-window.onload = function() {
-    // add ripple effect to all material buttons on the page
-    document.querySelectorAll('.mdc-button').forEach(function(e) {
-        mdc.ripple.MDCRipple.attachTo(e);
-    });
+window.onload = function () {
 
-    // initialize all text fields
-    document.querySelectorAll('.mdc-text-field').forEach(function(e) {
-        new mdc.textField.MDCTextField(e);
-    });
+  // Add ripple effect to all material buttons on the page
+  document.querySelectorAll('.mdc-button').forEach(function (e) {
+    mdc.ripple.MDCRipple.attachTo(e);
+  });
 
-    // initialize all icons
-    document.querySelectorAll('.mdc-text-field__icon').forEach(function(e) {
-        new mdc.textField.MDCTextFieldIcon(e);
-    });
+  // Initialize all text fields
+  document.querySelectorAll('.mdc-text-field').forEach(function (e) {
+    new mdc.textField.MDCTextField(e);
+  });
 
-    // initialize the language select box
-    var select = new mdc.select.MDCSelect(
-        document.querySelector('.language-picker .mdc-select')
-    );
+  // Initialize all icons
+  document.querySelectorAll('.mdc-text-field__icon').forEach(function (e) {
+    new mdc.textField.MDCTextFieldIcon(e);
+  });
 
-    select.listen('change', function() {
-        var redirectUrl = document.querySelector('#language-picker-dropdown')
-            .value;
-        window.location.href = redirectUrl;
-    });
+
+  // Initialize the language select box
+  var languageSelect = new mdc.select.MDCSelect(document.querySelector('.mdc-select'));
+
+  languageSelect.listen('MDCSelect:change', function() {
+    console.debug('Selected url: ' + languageSelect.value);
+    window.location.href = languageSelect.value;
+  });
+
 };
